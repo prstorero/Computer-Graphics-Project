@@ -18,12 +18,20 @@ public class Teleport : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		Debug.Log("Collision detected with " + collision.gameObject.tag);
+		if (!collision.gameObject.tag.Equals("Terrain"))
+			Debug.Log("Collision detected with " + collision.gameObject.tag);
 
 //		player.transform.position = new Vector3(0, 0, 0);
 
-		if (collision.gameObject.tag.Equals("homePortalTopic1"))
-			player.transform.position = topic1Portal.transform.position;
+		switch (collision.gameObject.tag)
+		{
+			case "homePortalTopic1":
+				player.transform.position = topic1Portal.transform.position + Vector3.back;
+				break;
+			case "topic1Portal":
+				player.transform.position = homePortalTopic1.transform.position + Vector3.forward;
+				break;
+		}
 	}
 
 	// Update is called once per frame
