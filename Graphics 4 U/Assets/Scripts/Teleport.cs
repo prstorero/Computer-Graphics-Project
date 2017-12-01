@@ -16,7 +16,15 @@ public class Teleport : MonoBehaviour {
 	// Topic 2 variables
 	private GameObject topic2Canvas;
 	private GameObject pickups;
+	private GameObject topic2Camera;
 	private bool isTopic2 = false;
+
+	// Topic 2 Shooter game variables
+	private GameObject shooterCanvas;
+	private GameObject shooterPlayer;
+	private GameObject shooterStarField;
+	private GameObject shooterGameController;
+	private GameObject shooterCamera;
 
 	// Use this for initialization
 	void Start () {
