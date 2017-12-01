@@ -5,6 +5,7 @@ using UnityEngine;
 public class Teleport : MonoBehaviour {
 
 	private GameObject player;
+	private GameObject playerCamera;
 
 	// Portal variables
 	private GameObject homePortalTopic1;
@@ -30,6 +31,8 @@ public class Teleport : MonoBehaviour {
 		topic2Canvas.SetActive(false);
 		pickups.SetActive(false);
 
+		playerCamera = GameObject.FindWithTag("PlayerCamera");
+
 	}
 
 	private void OnCollisionEnter(Collision collision)
@@ -49,7 +52,8 @@ public class Teleport : MonoBehaviour {
 				topic2Canvas.SetActive(true);
 				pickups.SetActive(true);
 				isTopic2 = true;
-				player.SetActive(false);
+				GetComponent<PlayerMovement>().enabled = false;
+				playerCamera.SetActive(false);
 				break;
 			case "topic1Portal":
 				player.transform.position = homePortalTopic1.transform.position + Vector3.forward;
@@ -65,10 +69,12 @@ public class Teleport : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (isTopic2 && Input.GetKey(KeyCode.Escape))
+		Debug.Log("Topic2 = " + isTopic2);
+		if (isTopic2 && Input.GetKeyDown(KeyCode.Escape))
 		{
 			isTopic2 = false;
-			player.SetActive(true);
+			GetComponent<PlayerMovement>().enabled = true;
+			playerCamera.SetActive(true);
 		}
 	}
 }
