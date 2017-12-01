@@ -71,7 +71,6 @@ public class Teleport : MonoBehaviour {
 
 		if (isTopic2 && Input.GetKeyDown(KeyCode.Escape))
 		{
-			SceneManager.UnloadSceneAsync(2);
 			isTopic2 = false;
 			GetComponent<PlayerMovement>().enabled = true;
 			playerCamera.SetActive(true);
