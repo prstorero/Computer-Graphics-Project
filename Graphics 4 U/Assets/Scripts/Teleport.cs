@@ -69,7 +69,6 @@ public class Teleport : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log("Topic2 = " + isTopic2);
 		if (isTopic2 && Input.GetKeyDown(KeyCode.Escape))
 		{
 			isTopic2 = false;
