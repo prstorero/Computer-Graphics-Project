@@ -49,8 +49,8 @@ public class Teleport : MonoBehaviour {
 				break;
 			case "homePortalTopic2":
 				player.transform.position = topic2Portal.transform.position + Vector3.back;
-				topic2Canvas.SetActive(true);
-				pickups.SetActive(true);
+				//topic2Canvas.SetActive(true);
+				//pickups.SetActive(true);
 				isTopic2 = true;
 				GetComponent<PlayerMovement>().enabled = false;
 				playerCamera.SetActive(false);
@@ -71,6 +71,7 @@ public class Teleport : MonoBehaviour {
 
 		if (isTopic2 && Input.GetKeyDown(KeyCode.Escape))
 		{
+			SceneManager.UnloadSceneAsync(2);
 			isTopic2 = false;
 			GetComponent<PlayerMovement>().enabled = true;
 			playerCamera.SetActive(true);
