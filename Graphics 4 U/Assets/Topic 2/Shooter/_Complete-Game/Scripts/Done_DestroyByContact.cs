@@ -10,7 +10,7 @@ public class Done_DestroyByContact : MonoBehaviour
 
 	void Start ()
 	{
-		GameObject gameControllerObject = GameObject.FindGameObjectWithTag ("GameController");
+		GameObject gameControllerObject = GameObject.FindGameObjectWithTag ("shooterGameController");
 		if (gameControllerObject != null)
 		{
 			gameController = gameControllerObject.GetComponent <Done_GameController>();
