@@ -33,17 +33,6 @@ public class Done_GameController : MonoBehaviour
         StartCoroutine(SpawnWaves());
     }
 
-    void Update()
-    {
-        if (restart)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-        }
-    }
-
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
@@ -61,7 +50,6 @@ public class Done_GameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart";
                 restart = true;
                 break;
             }
