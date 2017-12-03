@@ -55,6 +55,8 @@ public class Teleport : MonoBehaviour {
 
 		playerCamera = GameObject.FindWithTag("PlayerCamera");
 
+		topic2Camera = GameObject.FindWithTag("topic2Camera");
+
 	}
 
 	private void OnCollisionEnter(Collision collision)
@@ -76,6 +78,7 @@ public class Teleport : MonoBehaviour {
 				isTopic2 = true;
 				GetComponent<PlayerMovement>().enabled = false;
 				playerCamera.SetActive(false);
+				topic2Camera.SetActive(true);
 				break;
 			case "topic1Portal":
 				player.transform.position = homePortalTopic1.transform.position + Vector3.forward;
@@ -98,6 +101,13 @@ public class Teleport : MonoBehaviour {
 			playerCamera.SetActive(true);
 			topic2Canvas.SetActive(false);
 			pickups.SetActive(false);
+
+			// Turn off shooter game objects
+			shooterCanvas.SetActive(false);
+			shooterPlayer.SetActive(false);
+			shooterStarField.SetActive(false);
+			shooterGameController.SetActive(false);
+			shooterCamera.SetActive(false);
 		}
 
 		// If we're in topic 2, allow switching to the shooter game
