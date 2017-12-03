@@ -99,5 +99,20 @@ public class Teleport : MonoBehaviour {
 			topic2Canvas.SetActive(false);
 			pickups.SetActive(false);
 		}
+
+		// If we're in topic 2, allow switching to the shooter game
+		if (isTopic2 && Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			// Turn off roller ball objects
+			topic2Canvas.SetActive(false);
+			pickups.SetActive(false);
+
+			// Turn on shooter game objects
+			shooterCanvas.SetActive(true);
+			shooterPlayer.SetActive(true);
+			shooterStarField.SetActive(true);
+			shooterGameController.SetActive(true);
+			shooterCamera.SetActive(true);
+		}
 	}
 }
