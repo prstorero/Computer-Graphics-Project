@@ -36,6 +36,20 @@ public class Teleport : MonoBehaviour {
 		topic2Canvas = GameObject.FindWithTag("topic2Canvas");
 		pickups = GameObject.FindWithTag("pickups");
 
+		// Get shooter game objects
+		shooterCanvas = GameObject.FindWithTag("shooterCanvas");
+		shooterPlayer = GameObject.FindWithTag("shooterPlayer");
+		shooterStarField = GameObject.FindWithTag("shooterStarField");
+		shooterGameController = GameObject.FindWithTag("shooterGameController");
+		shooterCamera = GameObject.FindWithTag("shooterCamera");
+
+		// Initially disable shooter game objects
+		shooterCanvas.SetActive(false);
+		shooterPlayer.SetActive(false);
+		shooterStarField.SetActive(false);
+		shooterGameController.SetActive(false);
+		shooterCamera.SetActive(false);
+
 		topic2Canvas.SetActive(false);
 		pickups.SetActive(false);
 
