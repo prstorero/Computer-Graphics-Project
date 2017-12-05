@@ -10,8 +10,10 @@ public class Teleport : MonoBehaviour {
 	// Portal variables
 	private GameObject homePortalTopic1;
 	private GameObject homePortalTopic2;
+	private GameObject homePortalTopic3;
 	private GameObject topic1Portal;
 	private GameObject topic2Portal;
+	private GameObject topic3Portal;
 
 	// Topic 2 variables
 	private GameObject topic2Canvas;
