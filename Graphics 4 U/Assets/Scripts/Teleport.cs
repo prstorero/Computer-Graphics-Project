@@ -33,8 +33,10 @@ public class Teleport : MonoBehaviour {
 		player = GameObject.FindWithTag("Player");
 		homePortalTopic1 = GameObject.FindWithTag("homePortalTopic1");
 		homePortalTopic2 = GameObject.FindWithTag("homePortalTopic2");
+		homePortalTopic3 = GameObject.FindWithTag("homePortalTopic3");
 		topic1Portal = GameObject.FindWithTag("topic1Portal");
 		topic2Portal = GameObject.FindWithTag("topic2Portal");
+		topic3Portal = GameObject.FindWithTag("topic3Portal");
 		topic2Canvas = GameObject.FindWithTag("topic2Canvas");
 		pickups = GameObject.FindWithTag("pickups");
 
@@ -82,6 +84,9 @@ public class Teleport : MonoBehaviour {
 				playerCamera.SetActive(false);
 				topic2Camera.SetActive(true);
 				break;
+			case "homePortalTopic3":
+				player.transform.position = topic3Portal.transform.position + Vector3.forward;
+				break;
 			case "topic1Portal":
 				player.transform.position = homePortalTopic1.transform.position + Vector3.forward;
 				break;
@@ -89,6 +94,9 @@ public class Teleport : MonoBehaviour {
 				player.transform.position = homePortalTopic2.transform.position + Vector3.forward;
 				topic2Canvas.SetActive(false);
 				pickups.SetActive(false);
+				break;
+			case "topic3Portal":
+				player.transform.position = homePortalTopic3.transform.position + Vector3.back;
 				break;
 		}
 	}
