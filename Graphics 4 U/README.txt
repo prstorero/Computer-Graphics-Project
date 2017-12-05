@@ -5,10 +5,10 @@ Our goal was to teach some basic concepts and have interactive quizzes as well a
 To exit the shooter and roller ball games, press the escape (esc) key.
 
 Roller ball game:
-User the WASD keys to roll the ball around and collect the items corresponding to the questions.
+Use the WASD keys to roll the ball around and collect the items corresponding to the questions.
 
 Shooter game:
-Move left and right with the A and D keys, resptively, using the mouse button to shoot.
+Use the WASD keys to move and the mouse button to shoot.
 
 Quizzes:
 Use the mouse pointer to select the learning panels to cycle through.
