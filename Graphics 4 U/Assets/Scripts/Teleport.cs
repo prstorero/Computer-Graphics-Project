@@ -117,6 +117,15 @@ public class Teleport : MonoBehaviour {
 				playerCamera.SetActive(false);
 				topic2Camera.SetActive(false);
 
+				// Disable all portal cameras so we don't switch to them
+				camera1.SetActive(false);
+				camera2.SetActive(false);
+				camera3.SetActive(false);
+				camera4.SetActive(false);
+				camera5.SetActive(false);
+				camera6.SetActive(false);
+				camera7.SetActive(false);
+
 				isTopic2 = true;
 
 				// Turn on shooter game objects
