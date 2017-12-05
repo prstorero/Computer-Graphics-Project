@@ -11,6 +11,7 @@ public class Teleport : MonoBehaviour {
 	private GameObject homePortalTopic1;
 	private GameObject homePortalTopic2;
 	private GameObject homePortalTopic3;
+	private GameObject homePortalTopic2Shooter;
 	private GameObject topic1Portal;
 	private GameObject topic2Portal;
 	private GameObject topic3Portal;
@@ -34,6 +35,7 @@ public class Teleport : MonoBehaviour {
 		homePortalTopic1 = GameObject.FindWithTag("homePortalTopic1");
 		homePortalTopic2 = GameObject.FindWithTag("homePortalTopic2");
 		homePortalTopic3 = GameObject.FindWithTag("homePortalTopic3");
+		homePortalTopic2Shooter = GameObject.FindWithTag("HomePortalTopic2 Shooter");
 		topic1Portal = GameObject.FindWithTag("topic1Portal");
 		topic2Portal = GameObject.FindWithTag("topic2Portal");
 		topic3Portal = GameObject.FindWithTag("topic3Portal");
@@ -84,6 +86,19 @@ public class Teleport : MonoBehaviour {
 				playerCamera.SetActive(false);
 				topic2Camera.SetActive(true);
 				break;
+			case "HomePortalTopic2 Shooter":
+				playerCamera.SetActive(false);
+				topic2Camera.SetActive(false);
+
+				isTopic2 = true;
+
+				// Turn on shooter game objects
+				shooterCamera.SetActive(true);
+				shooterCanvas.SetActive(true);
+				shooterPlayer.SetActive(true);
+				shooterStarField.SetActive(true);
+				shooterGameController.SetActive(true);
+		break;
 			case "homePortalTopic3":
 				player.transform.position = topic3Portal.transform.position + Vector3.forward;
 				break;
@@ -103,7 +118,7 @@ public class Teleport : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		
 		if (isTopic2 && Input.GetKeyDown(KeyCode.Escape))
 		{
 			isTopic2 = false;
@@ -121,7 +136,7 @@ public class Teleport : MonoBehaviour {
 		}
 
 		// If we're in topic 2, allow switching to the shooter game
-		if (isTopic2 && Input.GetKeyDown(KeyCode.Alpha2))
+/*		if (isTopic2 && Input.GetKeyDown(KeyCode.Alpha2))
 		{
 			// Turn off roller ball objects
 			topic2Canvas.SetActive(false);
@@ -134,5 +149,6 @@ public class Teleport : MonoBehaviour {
 			shooterGameController.SetActive(true);
 			shooterCamera.SetActive(true);
 		}
+		*/
 	}
 }
