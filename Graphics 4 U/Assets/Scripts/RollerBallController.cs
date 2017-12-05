@@ -11,13 +11,13 @@ public class RollerBallController : MonoBehaviour
     public Text countText;
 
     private Rigidbody rb;
-  
+
 
     // Arrays to ensure question/answer order
-    private static string[] answerArray = new string[] { "correct1", "correct2", "correct3", "correct4", "correct5"};
+    private static string[] answerArray = new string[] { "correct1", "correct2", "correct3", "correct4", "correct5" };
     private string[] questionArray = new string[] { "What are two ways to convert between logical and device coordinates?",
                                                     "What data type does a device coordinate system use?",
-                                                    "Which coordinate system goes upward on the positive y-axis?", "What feature does a logical coordinate system contain?", "Which coordinate system travels downward on the positive y-axis?" };
+                                                    "Which coordinate system goes upward on the positive y-axis?", "What feature does a device coordinate system contain?", "Which coordinate system travels downward on the positive y-axis?" };
 
     // Keep track of where to index into the answer and question arrays
     private int answerIndex = 0;
