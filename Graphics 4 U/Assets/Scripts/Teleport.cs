@@ -109,7 +109,7 @@ public class Teleport : MonoBehaviour {
 				topic2Canvas.SetActive(true);
 				pickups.SetActive(true);
 				isTopic2 = true;
-				GetComponent<PlayerMovement>().enabled = false;
+				GetComponent<PlayerController>().enabled = false;
 				playerCamera.SetActive(false);
 				topic2Camera.SetActive(true);
 				break;
@@ -158,7 +158,7 @@ public class Teleport : MonoBehaviour {
 		if (isTopic2 && Input.GetKeyDown(KeyCode.Escape))
 		{
 			isTopic2 = false;
-			GetComponent<PlayerMovement>().enabled = true;
+			GetComponent<PlayerController>().enabled = true;
 			playerCamera.SetActive(true);
 			topic2Canvas.SetActive(false);
 			pickups.SetActive(false);
