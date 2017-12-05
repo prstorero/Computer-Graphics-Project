@@ -29,6 +29,15 @@ public class Teleport : MonoBehaviour {
 	private GameObject shooterGameController;
 	private GameObject shooterCamera;
 
+	// Portal camera objects
+	private GameObject camera1;
+	private GameObject camera2;
+	private GameObject camera3;
+	private GameObject camera4;
+	private GameObject camera5;
+	private GameObject camera6;
+	private GameObject camera7;
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag("Player");
@@ -56,6 +65,15 @@ public class Teleport : MonoBehaviour {
 		shooterGameController.SetActive(false);
 		shooterCamera.SetActive(false);
 
+		// Get references to portal cameras
+		camera1 = GameObject.FindWithTag("camera1");
+		camera2 = GameObject.FindWithTag("camera2");
+		camera3 = GameObject.FindWithTag("camera3");
+		camera4 = GameObject.FindWithTag("camera4");
+		camera5 = GameObject.FindWithTag("camera5");
+		camera6 = GameObject.FindWithTag("camera6");
+		camera7 = GameObject.FindWithTag("camera7");
+
 		topic2Canvas.SetActive(false);
 		pickups.SetActive(false);
 
@@ -78,6 +96,15 @@ public class Teleport : MonoBehaviour {
 				player.transform.position = topic1Portal.transform.position + Vector3.back;
 				break;
 			case "homePortalTopic2":
+				// Disable all portal cameras so we don't switch to them
+				camera1.SetActive(false);
+				camera2.SetActive(false);
+				camera3.SetActive(false);
+				camera4.SetActive(false);
+				camera5.SetActive(false);
+				camera6.SetActive(false);
+				camera7.SetActive(false);
+
 				player.transform.position = topic2Portal.transform.position + Vector3.back;
 				topic2Canvas.SetActive(true);
 				pickups.SetActive(true);
